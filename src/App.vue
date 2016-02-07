@@ -1,11 +1,10 @@
 <template lang='jade'>
 h1 Sled
 .sled(v-el:slider)
-  //
-    .arrows
-      .arrow
-      .arrow
-        .dots
+  .arrows
+    .arrow
+    .arrow
+  .dots
   .slides.simple
     .slide
       span.img
@@ -31,10 +30,13 @@ h2 click dots
 import Core from '@sled/core';
 import Slides from '@sled/slides';
 import Keys from '@sled/keys';
+import Touch from '@sled/touch';
+import Arrows from '@sled/arrows';
+import Dots from '@sled/dots';
 
 export default {
   ready() {
-    let core = new Core(this.$els.slider, Slides, Keys);
+    let core = new Core(this.$els.slider, Slides, Keys, Touch, Arrows, Dots);
   },
 };
 </script>

@@ -9,9 +9,12 @@
     "test": "karma start build/karma.conf.js --single-run"
   },
   "dependencies": {
+    "@sled/arrows": "^1.2.1",
     "@sled/core": "^1.4.0",
+    "@sled/dots": "^1.1.0",
     "@sled/keys": "^1.2.0",
     "@sled/slides": "^0.5.0",
+    "@sled/touch": "^0.2.1",
     "vue": "^1.0.0"
   },
   "devDependencies": {
