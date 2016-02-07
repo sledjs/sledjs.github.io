@@ -41,47 +41,38 @@ export default {
 };
 </script>
 
-<style>
-  body {
-    background: #eee;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-  }
+<style lang='stylus'>
+body
+  background #eee
+  height 100vh
+  margin 0
+  display flex
+  flex-flow column
+  align-items center
+  justify-content center
 
-  h1, h2 {
-    margin: .2em 0;
-    color: rgb(0, 127, 167);
-  }
+h1, h2
+  margin .2em 0
+  color rgb(0, 127, 167)
 
-  .sled {
-    width: 50em;
-    height: 25em;
-    border: solid rgb(0, 127, 167);
-    border-width: 0 .2em;
-  }
+.sled
+  width: 50em
+  height: 25em
+  border-width: 0 .2em
+  border: solid rgb(0, 127, 167)
+  .dots
+    .dotsWrapper
+      .dot
+        width: 1.5em
+        height: 1.5em
 
-  .sled .dots .dotsWrapper .dot.active {
-    background: rgb(0, 127, 167);
-  }
+.img
+  background: #fff
+  width: 40%
+  height: 80%
 
-  .sled .dots .dotsWrapper .dot {
-    width: 1.5em;
-    height: 1.5em;
-  }
-
-  .img {
-    background: #fff;
-    width: 40%;
-    height: 80%;
-  }
-
-  .blue {
-    background: rgb(0, 127, 167);
-    width: 90%;
-    height: 90%;
-  }
+.blue
+  background: rgb(0, 127, 167)
+  width: 90%
+  height: 90%
 </style>
