@@ -1,28 +1,58 @@
 <template lang='jade'>
-h1 Sled
-.sled(v-el:slider)
-  .arrows
-    .arrow
-    .arrow
-  .dots
-  .slides.simple
-    .slide
-      span.img
-    .slide
-      span.img.blue
-    .slide
-      span.img
-    .slide
-      span.img.blue
-    .slide
-      span.img
-    .slide
-      span.img.blue
+.window
+  h1 Sled
+  .sled(v-el:slider)
+    .arrows
+      .arrow
+      .arrow
+    .dots
+    .slides.simple
+      .slide(v-for='slide in slides')
+        span(:class='slide.class')
+          h2 Use arrow keys
+          h2 swipe or drag
+          h2 click dots
 
-h2 Use arrow keys
-h2 swipe or drag
-h2 click dots
+.module
+  h1 modules
+.modules
+  .module
+    h2 touch
 
+    .sled(v-el:touch)
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+            h3 drag or swipe
+
+  .module
+    h2 arrows
+
+    .sled(v-el:arrows)
+      .arrows
+        .arrow
+        .arrow
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+
+  .module
+    h2 dots
+
+    .sled(v-el:dots)
+      .dots
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+
+  .module
+    h2 keys
+
+    .sled(v-el:keys)
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+            h3 press keyboard arrow
 </template>
 
 
@@ -36,30 +66,78 @@ import Dots from '@sled/dots';
 
 export default {
   ready() {
-    let core = new Core(this.$els.slider, Slides, Keys, Touch, Arrows, Dots);
+    new Core(this.$els.slider, Slides, Keys, Touch, Arrows, Dots);
+    new Core(this.$els.touch, Slides, Touch);
+    new Core(this.$els.arrows, Slides, Arrows);
+    new Core(this.$els.dots, Slides, Dots);
+    new Core(this.$els.keys, Slides, Keys);
+  },
+
+  data() {
+    return {
+      slides: [
+        { class: 'img' },
+        { class: 'img' },
+        { class: 'img' },
+        { class: 'img' },
+      ],
+    };
   },
 };
+
 </script>
 
 <style lang='stylus'>
+@import '~flexstyl/index'
+color = rgb(0, 127, 167)
 body
-  background #eee
-  height 100vh
   margin 0
-  display flex
-  flex-flow column
-  align-items center
-  justify-content center
+  background #eee
+  @extend .flex, .fcolumn, .center
 
-h1, h2
+.window
+  height 100vh
+  @extend .flex, .fcolumn, .center
+
+h1, h2, h3
   margin .2em 0
-  color rgb(0, 127, 167)
+  color color
+
+.modules
+  @extend .flex, .fwrap, .around
+
+.module
+  margin 1em
+  text-align center
+
+  .sled
+    width: 25em
+    height 25em
+    .img
+      width 20em
+      height 20em
+
+
+  h1
+    width 98vw
+    margin 0
+    padding 1em 0
+    background color
+    color #fff
+
+  h2
+    background color
+    font-size 2em
+    padding .25em 0
+    width 100%
+    color #fff
 
 .sled
+  margin 0
   width: 50em
   height: 25em
-  border-width: 0 .2em
-  border: solid rgb(0, 127, 167)
+  border-width: 0 .1em
+  border: solid color
   .dots
     .dotsWrapper
       .dot
@@ -67,12 +145,8 @@ h1, h2
         height: 1.5em
 
 .img
-  background: #fff
-  width: 40%
-  height: 80%
-
-.blue
-  background: rgb(0, 127, 167)
-  width: 90%
-  height: 90%
+  @extend .flex, .center, .fcolumn
+  background #fff
+  width 40%
+  height 80%
 </style>
