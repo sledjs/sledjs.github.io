@@ -120,6 +120,7 @@ h1, h2, h3
     width: 25em
     height 25em
     .img
+      padding 0
       width 20em
       height 20em
 
