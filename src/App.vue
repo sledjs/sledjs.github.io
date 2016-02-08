@@ -140,8 +140,6 @@ h1, h2, h3
 
 .sled
   margin 0
-  width: 50em
-  height: 25em
   border-width: 0 .1em
   border: solid color
   .dots
@@ -153,6 +151,7 @@ h1, h2, h3
 .img
   @extend .flex, .center, .fcolumn
   background #fff
-  width 40%
-  height 80%
+  padding 3em
+  width 20em
+  height 10em
 </style>
