@@ -7,11 +7,17 @@
       .arrow
     .dots
     .slides.simple
-      .slide(v-for='slide in slides')
-        span(:class='slide.class')
+      .slide
+        span(class='img')
           h2 Use arrow keys
           h2 swipe or drag
           h2 click dots
+      .slide
+        img(src='http://3.bp.blogspot.com/-hQ2r4-TM2P8/Vq9xjgXHKBI/AAAAAAAACFc/XwreiGH_jD8/s320/10-Tips-for-Becoming-a-Better-JavaScript-Developer.jpg')
+      .slide
+        img(src='http://goto.project-a.com/wp-content/uploads/2015/08/NodeSchool.png')
+      .slide
+        img(src='https://www.creativefreedom.co.uk/wp-content/uploads/2015/04/Google-icon-spec-2.png')
 
 .module
   h1 modules
