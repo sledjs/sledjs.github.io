@@ -1,0 +1,69 @@
+.window
+  h1 Sled
+  .sled(v-el:slider)
+    .arrows
+      .arrow
+      .arrow
+    .dots
+    .slides.simple
+      .slide
+        span(class='img')
+          h2 Use arrow keys
+          h2 click dots
+          h2 swipe
+      .slide
+        img(src='http://3.bp.blogspot.com/-hQ2r4-TM2P8/Vq9xjgXHKBI/AAAAAAAACFc/XwreiGH_jD8/s320/10-Tips-for-Becoming-a-Better-JavaScript-Developer.jpg')
+      .slide
+        img(src='http://goto.project-a.com/wp-content/uploads/2015/08/NodeSchool.png')
+      .slide
+        img(src='https://www.creativefreedom.co.uk/wp-content/uploads/2015/04/Google-icon-spec-2.png')
+
+.module
+  h1 modules
+.modules
+  .module
+    h2 touch
+
+    .sled(v-el:touch)
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+            h3 drag
+
+  .module
+    h2 swipe
+
+    .sled(v-el:swipe)
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+            h3 swipe
+
+  .module
+    h2 arrows
+
+    .sled(v-el:arrows)
+      .arrows
+        .arrow
+        .arrow
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+
+  .module
+    h2 dots
+
+    .sled(v-el:dots)
+      .dots
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+
+  .module
+    h2 keys
+
+    .sled(v-el:keys)
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+            h3 press keyboard arrow

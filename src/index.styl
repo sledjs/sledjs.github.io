@@ -1,0 +1,64 @@
+@import '~flexstyl/index'
+color = rgb(0, 127, 167)
+
+body
+  margin 0
+  background #eee
+  @extend .flex, .fcolumn, .center
+
+.window
+  height 100vh
+  @extend .flex, .fcolumn, .center
+
+h1, h2, h3
+  margin .2em 0
+  color color
+
+.modules
+  @extend .flex, .fwrap, .around
+
+.module
+  margin 1em
+  text-align center
+
+  .sled
+    width: 25em
+    height 25em
+    .slide
+      &:nth-child(even)
+        .img
+          background color
+    .img
+      padding 0
+      width 20em
+      height 20em
+
+
+  h1
+    width 98vw
+    margin 0
+    padding 1em 0
+    background color
+    color #fff
+
+  h2
+    background color
+    font-size 2em
+    padding .25em 0
+    width 100%
+    color #fff
+
+.sled
+  margin 0
+  .dots
+    .dotsWrapper
+      .dot
+        width: 1.5em
+        height: 1.5em
+
+.img
+  @extend .flex, .center, .fcolumn
+  background #fff
+  padding 3em
+  width 20em
+  height 10em
