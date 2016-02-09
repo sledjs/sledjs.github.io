@@ -145,8 +145,6 @@ h1, h2, h3
 
 .sled
   margin 0
-  border-width: 0 .1em
-  border: solid color
   .dots
     .dotsWrapper
       .dot
