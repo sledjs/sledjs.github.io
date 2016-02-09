@@ -119,6 +119,10 @@ h1, h2, h3
   .sled
     width: 25em
     height 25em
+    .slide
+      &:nth-child(even)
+        .img
+          background color
     .img
       padding 0
       width 20em
