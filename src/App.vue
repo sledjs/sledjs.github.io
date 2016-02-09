@@ -82,7 +82,7 @@ import Dots from '@sled/dots';
 
 export default {
   ready() {
-    new Core(this.$els.slider, Slides, Keys, Touch, Arrows, Dots);
+    new Core(this.$els.slider, Slides, Keys, Swipe, Arrows, Dots);
     new Core(this.$els.touch, Slides, Touch);
     new Core(this.$els.swipe, Slides, Swipe);
     new Core(this.$els.arrows, Slides, Arrows);
