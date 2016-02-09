@@ -10,8 +10,8 @@
       .slide
         span(class='img')
           h2 Use arrow keys
-          h2 swipe or drag
           h2 click dots
+          h2 swipe
       .slide
         img(src='http://3.bp.blogspot.com/-hQ2r4-TM2P8/Vq9xjgXHKBI/AAAAAAAACFc/XwreiGH_jD8/s320/10-Tips-for-Becoming-a-Better-JavaScript-Developer.jpg')
       .slide
@@ -29,7 +29,16 @@
       .slides.simple
         .slide(v-for='slide in slides')
           span(:class='slide.class')
-            h3 drag or swipe
+            h3 drag
+
+  .module
+    h2 swipe
+
+    .sled(v-el:swipe)
+      .slides.simple
+        .slide(v-for='slide in slides')
+          span(:class='slide.class')
+            h3 swipe
 
   .module
     h2 arrows
@@ -65,6 +74,7 @@
 <script>
 import Core from '@sled/core';
 import Slides from '@sled/slides';
+import Swipe from '@sled/swipe';
 import Keys from '@sled/keys';
 import Touch from '@sled/touch';
 import Arrows from '@sled/arrows';
@@ -74,6 +84,7 @@ export default {
   ready() {
     new Core(this.$els.slider, Slides, Keys, Touch, Arrows, Dots);
     new Core(this.$els.touch, Slides, Touch);
+    new Core(this.$els.swipe, Slides, Swipe);
     new Core(this.$els.arrows, Slides, Arrows);
     new Core(this.$els.dots, Slides, Dots);
     new Core(this.$els.keys, Slides, Keys);
