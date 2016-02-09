@@ -1,3 +1,4 @@
+<style lang='stylus' src='./index.styl'></style>
 <template lang='jade' src='./index.jade'></template>
 
 <script>
@@ -32,5 +33,3 @@ export default {
 };
 
 </script>
-
-<style lang='stylus' src='./index.styl'></style>
